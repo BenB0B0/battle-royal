@@ -9,3 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
   - enabled: 1
     path: Assets/Scenes/house_inside.unity
+  - enabled: 1
+    path: Assets/Scenes/villiage.unity
+  - enabled: 1
+    path: Assets/Scenes/inside_store.unity
+  - enabled: 1
+    path: Assets/Scenes/house3.unity
+  - enabled: 1
+    path: Assets/Scenes/house2.unity
+  - enabled: 1
+    path: Assets/Scenes/house4.unity
+  - enabled: 1
+    path: Assets/Scenes/tunnel.unity
+  - enabled: 1
+    path: Assets/Scenes/house4backroom.unity

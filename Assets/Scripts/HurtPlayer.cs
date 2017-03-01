@@ -30,7 +30,7 @@ public class HurtPlayer : MonoBehaviour {
 			other.gameObject.GetComponent<PlayerHealthManager> ().HurtPlayer (currentDamage);
 
 			var clone = (GameObject) Instantiate(damageNumber, other.transform.position, Quaternion.Euler(Vector3.zero)); 
-			clone.GetComponent<FloatingNumbers> ().damageNumber = currentDamage;
+			clone.GetComponent<FloatingNumbersEnemy> ().damageNumber = currentDamage;
 		}
 	}
 }

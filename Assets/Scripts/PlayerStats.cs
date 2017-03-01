@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour {
 		if (currentExp >= toLevelUp [currentLevel]) {
 			//currentLevel++;
 			LevelUp();
+			currentExp = 0;
 		}
 	}
 
