@@ -105,7 +105,23 @@ public class PlayerController : MonoBehaviour {
 				attackTimeCounter = attackTime;
 				attacking = true; 
 				myRigidBody.velocity = Vector2.zero;
+			//	anim.SetBool ("Attack1", true);
+				sfxMan.playerAttack.Play ();
+
+			}
+			if (Input.GetKeyDown (KeyCode.U) && moveInput == Vector2.zero) {
+				attackTimeCounter = attackTime;
+				attacking = true; 
+				myRigidBody.velocity = Vector2.zero;
 				anim.SetBool ("Attack1", true);
+				sfxMan.playerAttack.Play ();
+
+			}
+			if (Input.GetKeyDown (KeyCode.I) && moveInput == Vector2.zero) {
+				attackTimeCounter = attackTime;
+				attacking = true; 
+				myRigidBody.velocity = Vector2.zero;
+				anim.SetBool ("FireWall", true);
 				sfxMan.playerAttack.Play ();
 
 			}
@@ -125,6 +141,7 @@ public class PlayerController : MonoBehaviour {
 			attacking = false;
 			anim.SetBool ("Attack", false);
 			anim.SetBool ("Attack1", false);
+			anim.SetBool ("FireWall", false);
 		}
 
 		anim.SetFloat ("MoveX", Input.GetAxisRaw ("Horizontal"));
