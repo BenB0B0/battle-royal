@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: db911519df996f14c81b609793f231ee
-timeCreated: 1487352350
+timeCreated: 1488939161
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: tumblr_ms62w19ujU1r7gavuo1_1280_0
+    21300002: tumblr_ms62w19ujU1r7gavuo1_1280_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -78,6 +79,19 @@ TextureImporter:
         y: 23
         width: 93
         height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tumblr_ms62w19ujU1r7gavuo1_1280_1
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 254
+        width: 130
+        height: 130
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

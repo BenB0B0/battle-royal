@@ -35,8 +35,8 @@ public class WeaponManager : MonoBehaviour {
 		deactivate ();
 		var weakSword = GameObject.Find("Player/Weapon/WeakSword");
 		weakSword.SetActive (true);
-		weakSword.GetComponent<WeaponManager>().damageToGive = 1;
-		weakSword.GetComponent<WeaponManager>().currentSword = "Grey Stone +1";
+		weakSword.GetComponent<WeaponManager>().damageToGive = 2;
+		weakSword.GetComponent<WeaponManager>().currentSword = "Grey Stone +2";
 		UIM.wepDam (weakSword.GetComponent<WeaponManager> ().damageToGive);
 		theInv.getSwordName (weakSword.GetComponent<WeaponManager> ().currentSword);
 	}
@@ -48,6 +48,15 @@ public class WeaponManager : MonoBehaviour {
 		mediumSword.GetComponent<WeaponManager>().currentSword = "Blue Lightning +4";
 		UIM.wepDam (mediumSword.GetComponent<WeaponManager> ().damageToGive);
 		theInv.getSwordName (mediumSword.GetComponent<WeaponManager> ().currentSword);
+	}
+	public void thinpickUp(){
+		deactivate ();
+		var thinSword = GameObject.Find("Player/Weapon/ThinSword");
+		thinSword.SetActive (true);
+		thinSword.GetComponent<WeaponManager>().damageToGive = 1;
+		thinSword.GetComponent<WeaponManager>().currentSword = "Silver Pin +1";
+		UIM.wepDam (thinSword.GetComponent<WeaponManager> ().damageToGive);
+		theInv.getSwordName (thinSword.GetComponent<WeaponManager> ().currentSword);
 	}
 	public void bowpickUp(){
 		bowPickedUp = true;
@@ -62,5 +71,7 @@ public class WeaponManager : MonoBehaviour {
 		weakSword.SetActive (false);
 		var mediumSword = GameObject.Find("Player/Weapon/MediumSword");
 		mediumSword.SetActive (false);
+		var thinSword = GameObject.Find("Player/Weapon/ThinSword");
+		thinSword.SetActive (false);
 	}
 }

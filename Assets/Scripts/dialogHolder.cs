@@ -7,7 +7,7 @@ public class dialogHolder : MonoBehaviour {
 	public string dialogue;
 	private DialogueManager dMan;
 	public string[] dialogLines;
-	private bool check;
+	public bool check;
 
 
 	// Use this for initialization

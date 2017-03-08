@@ -110,22 +110,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1180849287270506
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224907738154958500}
-  - component: {fileID: 114840466188328186}
-  m_Layer: 5
-  m_Name: Quest 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &1204057036738680
 GameObject:
   m_ObjectHideFlags: 1
@@ -646,6 +630,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1821873099893184
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224027730536821294}
+  - component: {fileID: 114121095125411210}
+  m_Layer: 5
+  m_Name: Quest 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1866866787710128
 GameObject:
   m_ObjectHideFlags: 1
@@ -960,6 +960,29 @@ MonoBehaviour:
   dialogLines:
   - Press (Space) to talk
   currentLine: 0
+--- !u!114 &114121095125411210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821873099893184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b25236968c6f534eb98277dc1835484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questNumber: 4
+  value: 0
+  theQM: {fileID: 114333664195713440}
+  theMM: {fileID: 0}
+  startText: Please help! I lost my special crystal, I can't seem to find it anywhere!
+    Please...If you find it I will give you coins.
+  endText: Thank goodness!!! Here's 10 Coins for the trouble
+  isItemQuest: 1
+  targetItem: Crystal
+  isEnemyQuest: 0
+  targetEnemy: 
+  enemiesToKill: 0
 --- !u!114 &114179766752316188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1145,7 +1168,8 @@ MonoBehaviour:
   - {fileID: 114994174290432608}
   - {fileID: 114823466098999540}
   - {fileID: 114961663529714042}
-  - {fileID: 114840466188328186}
+  - {fileID: 114121095125411210}
+  - {fileID: 0}
   questCompleted: 0000000000
   theDM: {fileID: 114231604637541182}
   itemCollected: 
@@ -1830,29 +1854,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Defense: X'
---- !u!114 &114840466188328186
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1180849287270506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b25236968c6f534eb98277dc1835484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questNumber: 4
-  value: 0
-  theQM: {fileID: 114333664195713440}
-  theMM: {fileID: 0}
-  startText: Please help! I lost my special crystal, I can't seem to find it anywhere!
-    Please...If you find it I will give you coins.
-  endText: Thank goodness!!! Here's 10 Coins for the trouble
-  isItemQuest: 1
-  targetItem: Crystal
-  isEnemyQuest: 0
-  targetEnemy: 
-  enemiesToKill: 0
 --- !u!114 &114858405375155280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2248,6 +2249,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!224 &224027730536821294
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821873099893184}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224756308051017812}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224046252389264222
 RectTransform:
   m_ObjectHideFlags: 1
@@ -2757,7 +2776,7 @@ RectTransform:
   - {fileID: 224429370577887388}
   - {fileID: 224487818841292322}
   - {fileID: 224568564980084816}
-  - {fileID: 224907738154958500}
+  - {fileID: 224027730536821294}
   m_Father: {fileID: 224808542043478112}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2933,24 +2952,6 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 47.99, y: 29.277191}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224907738154958500
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1180849287270506}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 224756308051017812}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224910544527159958
 RectTransform:

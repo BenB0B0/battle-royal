@@ -23,8 +23,8 @@ public class QuestTrigger : MonoBehaviour {
 	}
 
     public void OnTriggerEnter2D(Collider2D other){
-        if(other.gameObject.name =="Player" && !theQM.questCompleted[questNumber]){
-			
+		if(other.gameObject.name =="Player" && !theQM.questCompleted[questNumber]){
+
             if(startQuest && !theQM.quests[questNumber].gameObject.activeSelf){
                 theQM.quests[questNumber].gameObject.SetActive(true);
                 theQM.quests[questNumber].StartQuest();
@@ -39,5 +39,4 @@ public class QuestTrigger : MonoBehaviour {
 			}
         }
     }
-  
 }﻿
