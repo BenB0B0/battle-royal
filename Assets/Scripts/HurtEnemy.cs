@@ -9,12 +9,14 @@ public class HurtEnemy : MonoBehaviour {
 	public GameObject damageBurst;
 	public Transform hitPoint;
 	public GameObject damageNumber;
+	private WeaponManager weaponManager;
 
 	private PlayerStats thePS;
 
 	// Use this for initialization
 	void Start () {
 		thePS = FindObjectOfType<PlayerStats> ();
+		weaponManager = FindObjectOfType<WeaponManager> ();
 	}
 	
 	// Update is called once per frame
@@ -25,7 +27,7 @@ public class HurtEnemy : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Enemy") {
 			//Destroy (other.gameObject);
-			currentDamage = damageToGive + thePS.currentAttack;
+			currentDamage = damageToGive + thePS.currentAttack + weaponManager.weaponDamage;
 
 			other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
 			Instantiate (damageBurst, hitPoint.position, hitPoint.rotation);

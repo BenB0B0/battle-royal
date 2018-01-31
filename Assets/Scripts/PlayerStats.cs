@@ -15,8 +15,11 @@ public class PlayerStats : MonoBehaviour {
 	public int currentHP;
 	public int currentAttack;
 	public int currentDefense;
+	public float currentStamina;
+	public int maxStamina;
 
 	private PlayerHealthManager thePlayerHealth;
+	private PlayerController thePlayerController;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +27,11 @@ public class PlayerStats : MonoBehaviour {
 		currentAttack = attackLevels [1];
 		currentDefense = defenceLevels [1];
 
+		maxStamina = 190;
+		currentStamina = 100;
+
 		thePlayerHealth = FindObjectOfType<PlayerHealthManager> ();
+		thePlayerController = FindObjectOfType<PlayerController> ();
 	}
 	
 	// Update is called once per frame
@@ -33,6 +40,17 @@ public class PlayerStats : MonoBehaviour {
 			//currentLevel++;
 			LevelUp();
 		}
+
+		if (thePlayerController.moveSpeed == 7 && currentStamina > 0) {
+			currentStamina--;
+		} else if (thePlayerController.moveSpeed == 5 && currentStamina < maxStamina) {
+			currentStamina+=.1f;
+		}
+		if (thePlayerController.dashing) {
+			currentStamina = currentStamina - 100;
+			thePlayerController.dashing = false;
+		}
+
 	}
 
 	public void AddExperience(int experienceToAdd){
@@ -48,5 +66,7 @@ public class PlayerStats : MonoBehaviour {
 
 		currentAttack = attackLevels [currentLevel];
 		currentDefense = defenceLevels [currentLevel];
+
+		maxStamina += 10;
 	}
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SlimeController : MonoBehaviour {
 
 	public float moveSpeed;
+	private bool inCamView;
 	private bool moving;
 	private Rigidbody2D myRigidbody;
 	public float timeBetweenMove;
@@ -16,19 +17,20 @@ public class SlimeController : MonoBehaviour {
 	private Animator anim; 
 	public float waitToReload;
 	private bool reloading; 
-	private GameObject thePlayer;
+	public GameObject thePlayer;
+	private int moveUpOrDown;
 
 	// Use this for initialization
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody2D> ();
-
-		//timeBetweenMoveCounter = timeBetweenMove;
-		//timeToMoveCounter = timeToMove;
+		anim = GetComponent<Animator> ();
 
 		timeBetweenMoveCounter = Random.Range (timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
 		timeToMoveCounter = Random.Range (timeToMove * 0.75f, timeBetweenMove * 1.25f);
 
-		anim = GetComponent<Animator> ();
+		moveUpOrDown = Random.Range(0,1);
+		moveSpeed = Random.Range (1, 5);
+
 	}
 	
 	// Update is called once per frame
@@ -52,8 +54,27 @@ public class SlimeController : MonoBehaviour {
 				moving = true;
 				//timeToMoveCounter = timeToMove;
 				timeToMoveCounter = Random.Range (timeToMove * 0.75f, timeBetweenMove * 1.25f);
-				moveDirection = new Vector3 (Random.Range (-1f, 1f) * moveSpeed, Random.Range (-1f, 1f) * moveSpeed, 0f);
 
+				if (moveUpOrDown%2 == 0) {
+					if (transform.position.y < thePlayer.transform.position.y) {
+						moveDirection = new Vector3 ((0f) * moveSpeed, (1f) * moveSpeed, 0f);
+					}
+					if (transform.position.y > thePlayer.transform.position.y) {
+						moveDirection = new Vector3 ((0f) * moveSpeed, (-1f) * moveSpeed, 0f);
+					}
+				}
+				if (moveUpOrDown%2 == 1) {
+					if (transform.position.x < thePlayer.transform.position.x) {
+						moveDirection = new Vector3 ((1f) * moveSpeed, (0f) * moveSpeed, 0f);
+					}
+					if (transform.position.x > thePlayer.transform.position.x) {
+						moveDirection = new Vector3 ((-1f) * moveSpeed, (0f) * moveSpeed, 0f);
+					}
+				}
+				moveUpOrDown++;
+
+				//moveDirection = new Vector3 (Random.Range (-1f, 1f) * moveSpeed, Random.Range (-1f, 1f) * moveSpeed, 0f);
+			
 			}
 		}
 
